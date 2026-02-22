@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iergin <iergin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/22 07:18:21 by iergin            #+#    #+#             */
-/*   Updated: 2026/02/22 08:53:25 by iergin           ###   ########.fr       */
+/*   Created: 2026/02/22 08:51:40 by iergin            #+#    #+#             */
+/*   Updated: 2026/02/22 08:57:19 by iergin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+int	ft_num_len(long n)
+{
+	int	len;
 
-#include "libft/libft.h"
-#include <stdarg.h>
-
-int	ft_printf(const char *input, ...);
-int	ft_print_str(char *str);
-int	ft_print_nbr(long n);
-int	ft_num_len(long n);
-
-#endif
+	len = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		n = -n;
+		len++;
+	}
+	while (n > 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}
