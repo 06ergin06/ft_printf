@@ -6,7 +6,7 @@
 /*   By: iergin <iergin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 08:51:43 by iergin            #+#    #+#             */
-/*   Updated: 2026/02/22 10:19:52 by iergin           ###   ########.fr       */
+/*   Updated: 2026/02/22 10:27:20 by iergin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,12 @@ int	ft_print_ptr(void *p)
 	return (count);
 }
 
-int	ft_print_hex(unsigned int n, int isBig)
+int	ft_print_hex(unsigned int n, int is_big)
 {
 	int	count;
 
 	count = 0;
-	if (isBig)
+	if (is_big)
 		count += hex_to_ptr(n, 1);
 	else
 		count += hex_to_ptr(n, 0);
