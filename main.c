@@ -3,6 +3,7 @@
 
 int main()
 {
-	ft_printf("%d",ft_printf("merhaba %c %s %d %%  ", 'a', "dosakodksao", 1234));
-	//printf("%d",printf("merhaba %c %s %d %%  ", 'a', "dosakodksao", 1234));
+	int n = 42;
+	int *ptr = &n;
+	ft_printf("%d",ft_printf(" merhaba %c %s %d %%  %p ", 'a', "dosakodksao", 1234, ptr));
 }
