@@ -6,7 +6,7 @@
 /*   By: iergin <iergin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 07:18:21 by iergin            #+#    #+#             */
-/*   Updated: 2026/02/22 10:27:57 by iergin           ###   ########.fr       */
+/*   Updated: 2026/02/22 14:09:22 by iergin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int	hex_to_ptr(unsigned long n, int is_big);
 int	ft_print_ptr(void *p);
 int	ft_print_uint(unsigned int n);
 int	ft_print_hex(unsigned int n, int is_big);
+void	ft_putchar(char c, int *cnt);
 
 #endif
