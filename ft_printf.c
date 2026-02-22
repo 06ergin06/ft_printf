@@ -6,30 +6,36 @@
 /*   By: iergin <iergin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 07:18:46 by iergin            #+#    #+#             */
-/*   Updated: 2026/02/22 10:00:47 by iergin           ###   ########.fr       */
+/*   Updated: 2026/02/22 10:22:28 by iergin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	detect_sign(char s, va_list *args, int *count)
+static void	detect_sign(char s, va_list *args, int *count)
 {
-	if (s == 'c' && (*count)++)
+	if (s == 'c')
+	{
 		ft_putchar_fd(va_arg(*args, int), 1);
+		(*count)++;
+	}
 	else if (s == 's')
 		(*count) += ft_print_str(va_arg(*args, char *));
 	else if (s == 'd' || s == 'i')
 		(*count) += ft_print_nbr(va_arg(*args, int));
 	else if (s == 'u')
 		(*count) += ft_print_uint(va_arg(*args, unsigned int));
-	else if (s == '%' && (*count)++)
+	else if (s == '%')
+	{
 		ft_putchar_fd('%', 1);
+		(*count)++;
+	}
 	else if (s == 'p')
 		(*count) += ft_print_ptr(va_arg(*args, void *));
 	else if (s == 'x')
-		(*count) += ft_print_hex(va_arg(*args, long), 0);
+		(*count) += ft_print_hex(va_arg(*args, unsigned int), 0);
 	else if (s == 'X')
-		(*count) += ft_print_hex(va_arg(*args, long), 1);
+		(*count) += ft_print_hex(va_arg(*args, unsigned int), 1);
 }
 
 int	ft_printf(const char *input, ...)

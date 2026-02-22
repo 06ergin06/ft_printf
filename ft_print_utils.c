@@ -6,17 +6,18 @@
 /*   By: iergin <iergin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 08:51:43 by iergin            #+#    #+#             */
-/*   Updated: 2026/02/22 10:07:44 by iergin           ###   ########.fr       */
+/*   Updated: 2026/02/22 10:19:52 by iergin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft/libft.h"
 
 int	ft_print_str(char *str)
 {
 	int	count;
 
+	if (!str)
+		str = "(null)";
 	count = ft_strlen(str);
 	ft_putstr_fd(str, 1);
 	return (count);
@@ -57,7 +58,7 @@ int	ft_print_ptr(void *p)
 	return (count);
 }
 
-int	ft_print_hex(long n, int isBig)
+int	ft_print_hex(unsigned int n, int isBig)
 {
 	int	count;
 

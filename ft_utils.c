@@ -6,7 +6,7 @@
 /*   By: iergin <iergin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 08:51:40 by iergin            #+#    #+#             */
-/*   Updated: 2026/02/22 10:07:34 by iergin           ###   ########.fr       */
+/*   Updated: 2026/02/22 10:17:35 by iergin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	hex_to_ptr(unsigned long n, int isBig)
 
 	base = "0123456789abcdef";
 	count = 0;
-	if (n > 16)
+	if (n >= 16)
 	{
 		if (isBig)
 			count += hex_to_ptr((n / 16), 1);
