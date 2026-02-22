@@ -5,5 +5,8 @@ int main()
 {
 	int n = 42;
 	int *ptr = &n;
-	ft_printf("%d",ft_printf(" merhaba %c %s %d %%  %p ", 'a', "dosakodksao", 1234, ptr));
+	unsigned int x = 42;
+	ft_printf("%d",ft_printf(" merhaba %c %s %d %%  %p %u ", 'a', "dosakodksao", 1234, ptr, x));
+	printf("%d",printf("\nmerhaba %c %s %d %%  %p %u ", 'a', "dosakodksao", 1234, ptr, x));
+
 }
