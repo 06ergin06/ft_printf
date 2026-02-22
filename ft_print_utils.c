@@ -6,7 +6,7 @@
 /*   By: iergin <iergin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 08:51:43 by iergin            #+#    #+#             */
-/*   Updated: 2026/02/22 09:43:34 by iergin           ###   ########.fr       */
+/*   Updated: 2026/02/22 09:47:11 by iergin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int	ft_print_uint(unsigned int n)
 		count += ft_print_uint(n / 10);
 	ft_putchar_fd((n % 10) + '0', 1);
 	count++;
-
 	return (count);
 }
 
@@ -51,10 +50,8 @@ int	ft_print_ptr(void *p)
 
 	count = 0;
 	ptr = (unsigned long)p;
-
-	if(!ptr)
+	if (!ptr)
 		return (ft_print_str("(nil)"));
-
 	count += ft_print_str("0x");
 	count += hex_to_ptr(ptr);
 	return (count);

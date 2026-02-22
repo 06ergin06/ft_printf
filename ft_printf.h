@@ -6,7 +6,7 @@
 /*   By: iergin <iergin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 07:18:21 by iergin            #+#    #+#             */
-/*   Updated: 2026/02/22 09:37:44 by iergin           ###   ########.fr       */
+/*   Updated: 2026/02/22 09:46:05 by iergin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_printf(const char *input, ...);
 int	ft_print_str(char *str);
 int	ft_print_nbr(long n);
 int	ft_num_len(long n);
-int hex_to_ptr(unsigned long n);
+int	hex_to_ptr(unsigned long n);
 int	ft_print_ptr(void *p);
 int	ft_print_uint(unsigned int n);
 
