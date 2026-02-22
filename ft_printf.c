@@ -6,7 +6,7 @@
 /*   By: iergin <iergin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 07:18:46 by iergin            #+#    #+#             */
-/*   Updated: 2026/02/22 09:05:45 by iergin           ###   ########.fr       */
+/*   Updated: 2026/02/22 09:11:53 by iergin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,10 @@ int	ft_printf(const char *input, ...)
 	i = 0;
 	while (input[i])
 	{
-		if (input[i] == '%')
+		if (input[i] == '%' && input[i + 1])
 		{
-			if (input[++i])
-			{
-				detect_sign(input[i], &args, &count);
-			}
+			i++;
+			detect_sign(input[i], &args, &count);
 		}
 		else
 		{
