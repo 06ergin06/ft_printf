@@ -6,7 +6,7 @@
 /*   By: iergin <iergin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 08:51:43 by iergin            #+#    #+#             */
-/*   Updated: 2026/02/22 08:57:09 by iergin           ###   ########.fr       */
+/*   Updated: 2026/02/22 09:07:47 by iergin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ int	ft_print_str(char *str)
 	ft_putstr_fd(str, 1);
 	return (count);
 }
+
 int	ft_print_nbr(long n)
 {
-	int count;
+	int	count;
+
 	count = ft_num_len(n);
 	ft_putnbr_fd(n, 1);
-
 	return (count);
 }
