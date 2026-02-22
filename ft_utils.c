@@ -6,7 +6,7 @@
 /*   By: iergin <iergin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 08:51:40 by iergin            #+#    #+#             */
-/*   Updated: 2026/02/22 09:48:13 by iergin           ###   ########.fr       */
+/*   Updated: 2026/02/22 10:07:34 by iergin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_num_len(long n)
 	return (len);
 }
 
-int	hex_to_ptr(unsigned long n)
+int	hex_to_ptr(unsigned long n, int isBig)
 {
 	int		count;
 	char	*base;
@@ -40,8 +40,16 @@ int	hex_to_ptr(unsigned long n)
 	base = "0123456789abcdef";
 	count = 0;
 	if (n > 16)
-		count += hex_to_ptr(n / 16);
-	ft_putchar_fd(base[n % 16], 1);
+	{
+		if (isBig)
+			count += hex_to_ptr((n / 16), 1);
+		else
+			count += hex_to_ptr((n / 16), 0);
+	}
+	if (isBig)
+		ft_putchar_fd(ft_toupper(base[n % 16]), 1);
+	else
+		ft_putchar_fd((base[n % 16]), 1);
 	count++;
 	return (count);
 }

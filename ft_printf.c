@@ -6,7 +6,7 @@
 /*   By: iergin <iergin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 07:18:46 by iergin            #+#    #+#             */
-/*   Updated: 2026/02/22 09:44:53 by iergin           ###   ########.fr       */
+/*   Updated: 2026/02/22 10:00:47 by iergin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ void	detect_sign(char s, va_list *args, int *count)
 		ft_putchar_fd('%', 1);
 	else if (s == 'p')
 		(*count) += ft_print_ptr(va_arg(*args, void *));
+	else if (s == 'x')
+		(*count) += ft_print_hex(va_arg(*args, long), 0);
+	else if (s == 'X')
+		(*count) += ft_print_hex(va_arg(*args, long), 1);
 }
 
 int	ft_printf(const char *input, ...)

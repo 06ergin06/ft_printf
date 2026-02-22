@@ -6,7 +6,7 @@
 /*   By: iergin <iergin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 08:51:43 by iergin            #+#    #+#             */
-/*   Updated: 2026/02/22 09:47:11 by iergin           ###   ########.fr       */
+/*   Updated: 2026/02/22 10:07:44 by iergin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,18 @@ int	ft_print_ptr(void *p)
 	if (!ptr)
 		return (ft_print_str("(nil)"));
 	count += ft_print_str("0x");
-	count += hex_to_ptr(ptr);
+	count += hex_to_ptr(ptr, 0);
+	return (count);
+}
+
+int	ft_print_hex(long n, int isBig)
+{
+	int	count;
+
+	count = 0;
+	if (isBig)
+		count += hex_to_ptr(n, 1);
+	else
+		count += hex_to_ptr(n, 0);
 	return (count);
 }
