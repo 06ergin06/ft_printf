@@ -6,11 +6,11 @@
 /*   By: iergin <iergin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 08:51:40 by iergin            #+#    #+#             */
-/*   Updated: 2026/02/22 10:28:09 by iergin           ###   ########.fr       */
+/*   Updated: 2026/02/22 10:36:44 by iergin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "ft_printf.h"
 
 int	ft_num_len(long n)
 {
