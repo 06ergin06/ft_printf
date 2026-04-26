@@ -6,7 +6,7 @@
 /*   By: iergin <iergin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 07:18:46 by iergin            #+#    #+#             */
-/*   Updated: 2026/02/23 08:37:10 by iergin           ###   ########.fr       */
+/*   Updated: 2026/04/26 15:24:00 by iergin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ static void	detect_sign(char s, va_list *args, int *count)
 		(*count) += ft_print_nbr(va_arg(*args, int));
 	else if (s == 'u')
 		(*count) += ft_print_uint(va_arg(*args, unsigned int));
-	else if (s == '%')
-		ft_putchar('%', count);
 	else if (s == 'p')
 		(*count) += ft_print_ptr(va_arg(*args, void *));
 	else if (s == 'x')
 		(*count) += ft_print_hex(va_arg(*args, unsigned int), 0);
 	else if (s == 'X')
 		(*count) += ft_print_hex(va_arg(*args, unsigned int), 1);
+	else if (s == '%')
+		ft_putchar('%', count);
 	else
 	{
 		ft_putchar('%', count);
@@ -46,10 +46,15 @@ int	ft_printf(const char *input, ...)
 	va_start(args, input);
 	count = 0;
 	i = 0;
+	if (!input)
+		return (-1);
 	while (input[i])
 	{
 		if (input[i] == '%' && input[i + 1])
-			detect_sign(input[++i], &args, &count);
+		{
+			i++;
+			detect_sign(input[i], &args, &count);
+		}
 		else
 		{
 			ft_putchar_fd(input[i], 1);

@@ -7,10 +7,10 @@ A re-implementation of the C standard library `printf` function. The goal is to 
 ## Instructions
 
 ```bash
-make          # build libftprintf.a
-make clean    # remove object files
-make fclean   # remove object files and library
-make re       # fclean + build
+make
+make clean
+make fclean
+make re
 ```
 
 Link the library when compiling your own project:
