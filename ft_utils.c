@@ -54,8 +54,8 @@ int	hex_to_ptr(unsigned long n, int is_big)
 	return (count);
 }
 
-void	ft_putchar(char c, int *cnt)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
-	(*cnt)++;
+	return (1);
 }

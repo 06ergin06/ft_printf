@@ -24,6 +24,6 @@ int		hex_to_ptr(unsigned long n, int is_big);
 int		ft_print_ptr(void *p);
 int		ft_print_uint(unsigned int n);
 int		ft_print_hex(unsigned int n, int is_big);
-void	ft_putchar(char c, int *cnt);
+int		ft_putchar(char c);
 
 #endif

@@ -15,7 +15,7 @@
 static void	detect_sign(char s, va_list *args, int *count)
 {
 	if (s == 'c')
-		ft_putchar(va_arg(*args, int), count);
+		(*count) += ft_putchar(va_arg(*args, int));
 	else if (s == 's')
 		(*count) += ft_print_str(va_arg(*args, char *));
 	else if (s == 'd' || s == 'i')
@@ -29,11 +29,11 @@ static void	detect_sign(char s, va_list *args, int *count)
 	else if (s == 'X')
 		(*count) += ft_print_hex(va_arg(*args, unsigned int), 1);
 	else if (s == '%')
-		ft_putchar('%', count);
+		(*count) += ft_putchar('%');
 	else
 	{
-		ft_putchar('%', count);
-		ft_putchar(s, count);
+		(*count) += ft_putchar('%');
+		(*count) += ft_putchar(s);
 	}
 }
 
