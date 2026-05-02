@@ -6,7 +6,7 @@
 /*   By: iergin <iergin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 07:18:46 by iergin            #+#    #+#             */
-/*   Updated: 2026/04/26 15:24:00 by iergin           ###   ########.fr       */
+/*   Updated: 2026/05/02 17:23:56 by iergin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ static void	detect_sign(char s, va_list *args, int *count)
 		(*count) += ft_print_hex(va_arg(*args, unsigned int), 1);
 	else if (s == '%')
 		(*count) += ft_putchar('%');
+	else if (s == '\0')
+		*count = -1;
 	else
 	{
 		(*count) += ft_putchar('%');
@@ -40,27 +42,24 @@ static void	detect_sign(char s, va_list *args, int *count)
 int	ft_printf(const char *input, ...)
 {
 	va_list	args;
-	int		i;
 	int		count;
 
-	va_start(args, input);
-	count = 0;
-	i = 0;
 	if (!input)
 		return (-1);
-	while (input[i])
+	va_start(args, input);
+	count = 0;
+	while (*input && count != -1)
 	{
-		if (input[i] == '%' && input[i + 1])
+		if (*input == '%')
 		{
-			i++;
-			detect_sign(input[i], &args, &count);
+			input++;
+			while (*input == ' ')
+				input++;
+			detect_sign(*input, &args, &count);
 		}
 		else
-		{
-			ft_putchar_fd(input[i], 1);
-			count++;
-		}
-		i++;
+			count += ft_putchar(*input);
+		input++;
 	}
 	va_end(args);
 	return (count);
